@@ -1,0 +1,137 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": " Request structure for a branch create request. ",
+            "properties": {
+                "basicAuthCredentials": {
+                    "description": " Basic Authorization credentials for the branch. ",
+                    "maxLength": 2000,
+                    "type": "string"
+                },
+                "branchName": {
+                    "description": " Name for the branch. ",
+                    "maxLength": 255,
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "buildSpec": {
+                    "description": " BuildSpec for the branch. ",
+                    "maxLength": 25000,
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "description": {
+                    "description": " Description for the branch. ",
+                    "maxLength": 1000,
+                    "type": "string"
+                },
+                "enableAutoBuild": {
+                    "description": " Enables auto building for the branch. ",
+                    "type": "boolean"
+                },
+                "enableBasicAuth": {
+                    "description": " Enables Basic Auth for the branch. ",
+                    "type": "boolean"
+                },
+                "enableNotification": {
+                    "description": " Enables notifications for the branch. ",
+                    "type": "boolean"
+                },
+                "environmentVariables": {
+                    "description": " Environment Variables for the branch. ",
+                    "items": {
+                        "properties": {
+                            "key": {
+                                "maxLength": 255,
+                                "type": "string"
+                            },
+                            "value": {
+                                "maxLength": 1000,
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "framework": {
+                    "description": " Framework for the branch. ",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "stage": {
+                    "description": " Stage for the branch. ",
+                    "enum": [
+                        "PRODUCTION",
+                        "BETA",
+                        "DEVELOPMENT",
+                        "EXPERIMENTAL"
+                    ],
+                    "type": "string"
+                },
+                "tags": {
+                    "description": " Tag for the branch. ",
+                    "items": {
+                        "properties": {
+                            "key": {
+                                "maxLength": 1000,
+                                "type": "string"
+                            },
+                            "value": {
+                                "maxLength": 1000,
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "ttl": {
+                    "description": " The content TTL for the website in seconds. ",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "branchName"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

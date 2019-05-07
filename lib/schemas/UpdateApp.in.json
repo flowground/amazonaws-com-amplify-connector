@@ -1,0 +1,148 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": " Request structure for update App request. ",
+            "properties": {
+                "basicAuthCredentials": {
+                    "description": " Basic Authorization credentials for an Amplify App. ",
+                    "maxLength": 2000,
+                    "type": "string"
+                },
+                "buildSpec": {
+                    "description": " BuildSpec for an Amplify App. ",
+                    "maxLength": 25000,
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "customRules": {
+                    "description": " Custom redirect / rewrite rules for an Amplify App. ",
+                    "items": {
+                        "description": " Custom rewrite / redirect rule. ",
+                        "properties": {
+                            "condition": {
+                                "description": " The condition for a URL rewrite or redirect rule, e.g. country code. ",
+                                "maxLength": 2048,
+                                "minLength": 1,
+                                "type": "string"
+                            },
+                            "source": {
+                                "description": " The source pattern for a URL rewrite or redirect rule. ",
+                                "maxLength": 2048,
+                                "minLength": 1,
+                                "type": "string"
+                            },
+                            "status": {
+                                "description": " The status code for a URL rewrite or redirect rule. ",
+                                "maxLength": 3,
+                                "minLength": 3,
+                                "type": "string"
+                            },
+                            "target": {
+                                "description": " The target pattern for a URL rewrite or redirect rule. ",
+                                "maxLength": 2048,
+                                "minLength": 1,
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "source",
+                            "target"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "description": " Description for an Amplify App. ",
+                    "maxLength": 1000,
+                    "type": "string"
+                },
+                "enableBasicAuth": {
+                    "description": " Enables Basic Authorization for an Amplify App. ",
+                    "type": "boolean"
+                },
+                "enableBranchAutoBuild": {
+                    "description": " Enables branch auto-building for an Amplify App. ",
+                    "type": "boolean"
+                },
+                "environmentVariables": {
+                    "description": " Environment Variables for an Amplify App. ",
+                    "items": {
+                        "properties": {
+                            "key": {
+                                "maxLength": 255,
+                                "type": "string"
+                            },
+                            "value": {
+                                "maxLength": 1000,
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "iamServiceRoleArn": {
+                    "description": " IAM service role for an Amplify App. ",
+                    "maxLength": 1000,
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "name": {
+                    "description": " Name for an Amplify App. ",
+                    "maxLength": 255,
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "platform": {
+                    "description": " Platform for an Amplify App. ",
+                    "enum": [
+                        "IOS",
+                        "ANDROID",
+                        "WEB",
+                        "REACT_NATIVE"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

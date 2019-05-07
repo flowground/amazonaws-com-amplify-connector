@@ -1,0 +1,85 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "required": true,
+            "type": "string"
+        },
+        "branchName": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": " Request structure for Start job request. ",
+            "properties": {
+                "commitId": {
+                    "description": " Commit Id from 3rd party repository provider for the Job. ",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "commitMessage": {
+                    "description": " Commit message from 3rd party repository provider for the Job. ",
+                    "maxLength": 10000,
+                    "type": "string"
+                },
+                "commitTime": {
+                    "description": " Commit date / time for the Job. ",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "jobId": {
+                    "description": " Unique Id for the Job. ",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "jobReason": {
+                    "description": " Reason for the Job. ",
+                    "maxLength": 255,
+                    "type": "string"
+                },
+                "jobType": {
+                    "description": " Type for the Job. ",
+                    "enum": [
+                        "RELEASE",
+                        "RETRY",
+                        "WEB_HOOK"
+                    ],
+                    "maxLength": 10,
+                    "type": "string"
+                }
+            },
+            "required": [
+                "jobType"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

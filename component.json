@@ -1,0 +1,380 @@
+{
+    "title": "AWS Amplify",
+    "description": " Amplify is a fully managed continuous deployment and hosting service for modern web apps. ",
+    "docsUrl": "https://aws.amazon.com/amplify/",
+    "url": "https://api.apis.guru/v2/specs/amazonaws.com/amplify/2017-07-25/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://amplify.amazonaws.com/",
+                    "http://amplify.amazonaws.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "hmac": {
+                "label": "Authorization (hmac)",
+                "viewClass": "TextFieldView",
+                "note": "Amazon Signature authorization v4"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "ListApps": {
+            "main": "./lib/actions/ListApps.js",
+            "title": " Lists existing Amplify Apps. ",
+            "description": " Lists existing Amplify Apps. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListApps.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateApp": {
+            "main": "./lib/actions/CreateApp.js",
+            "title": " Creates a new Amplify App. ",
+            "description": " Creates a new Amplify App. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateApp.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteApp": {
+            "main": "./lib/actions/DeleteApp.js",
+            "title": " Delete an existing Amplify App by appId. ",
+            "description": " Delete an existing Amplify App by appId. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteApp.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetApp": {
+            "main": "./lib/actions/GetApp.js",
+            "title": " Retrieves an existing Amplify App by appId. ",
+            "description": " Retrieves an existing Amplify App by appId. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetApp.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateApp": {
+            "main": "./lib/actions/UpdateApp.js",
+            "title": " Updates an existing Amplify App. ",
+            "description": " Updates an existing Amplify App. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateApp.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListBranches": {
+            "main": "./lib/actions/ListBranches.js",
+            "title": " Lists branches for an Amplify App. ",
+            "description": " Lists branches for an Amplify App. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListBranches.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateBranch": {
+            "main": "./lib/actions/CreateBranch.js",
+            "title": " Creates a new Branch for an Amplify App. ",
+            "description": " Creates a new Branch for an Amplify App. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateBranch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteBranch": {
+            "main": "./lib/actions/DeleteBranch.js",
+            "title": " Deletes a branch for an Amplify App. ",
+            "description": " Deletes a branch for an Amplify App. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteBranch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetBranch": {
+            "main": "./lib/actions/GetBranch.js",
+            "title": " Retrieves a branch for an Amplify App. ",
+            "description": " Retrieves a branch for an Amplify App. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetBranch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateBranch": {
+            "main": "./lib/actions/UpdateBranch.js",
+            "title": " Updates a branch for an Amplify App. ",
+            "description": " Updates a branch for an Amplify App. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateBranch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListJobs": {
+            "main": "./lib/actions/ListJobs.js",
+            "title": " List Jobs for a branch, part of an Amplify App. ",
+            "description": " List Jobs for a branch, part of an Amplify App. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListJobs.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "StartJob": {
+            "main": "./lib/actions/StartJob.js",
+            "title": " Starts a new job for a branch, part of an Amplify App. ",
+            "description": " Starts a new job for a branch, part of an Amplify App. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/StartJob.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteJob": {
+            "main": "./lib/actions/DeleteJob.js",
+            "title": " Delete a job, for an Amplify branch, part of Amplify App. ",
+            "description": " Delete a job, for an Amplify branch, part of Amplify App. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteJob.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetJob": {
+            "main": "./lib/actions/GetJob.js",
+            "title": " Get a job for a branch, part of an Amplify App. ",
+            "description": " Get a job for a branch, part of an Amplify App. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetJob.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "StopJob": {
+            "main": "./lib/actions/StopJob.js",
+            "title": " Stop a job that is in progress, for an Amplify branch, part of Amplify App. ",
+            "description": " Stop a job that is in progress, for an Amplify branch, part of Amplify App. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/StopJob.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListDomainAssociations": {
+            "main": "./lib/actions/ListDomainAssociations.js",
+            "title": " List domains with an app ",
+            "description": " List domains with an app ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListDomainAssociations.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateDomainAssociation": {
+            "main": "./lib/actions/CreateDomainAssociation.js",
+            "title": " Create a new DomainAssociation on an App ",
+            "description": " Create a new DomainAssociation on an App ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateDomainAssociation.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteDomainAssociation": {
+            "main": "./lib/actions/DeleteDomainAssociation.js",
+            "title": " Deletes a DomainAssociation. ",
+            "description": " Deletes a DomainAssociation. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteDomainAssociation.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetDomainAssociation": {
+            "main": "./lib/actions/GetDomainAssociation.js",
+            "title": " Retrieves domain info that corresponds to an appId and domainName. ",
+            "description": " Retrieves domain info that corresponds to an appId and domainName. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetDomainAssociation.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateDomainAssociation": {
+            "main": "./lib/actions/UpdateDomainAssociation.js",
+            "title": " Create a new DomainAssociation on an App ",
+            "description": " Create a new DomainAssociation on an App ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateDomainAssociation.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

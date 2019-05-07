@@ -1,0 +1,181 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": " Request structure used to create Apps in Amplify. ",
+            "properties": {
+                "basicAuthCredentials": {
+                    "description": " Credentials for Basic Authorization for an Amplify App. ",
+                    "maxLength": 2000,
+                    "type": "string"
+                },
+                "buildSpec": {
+                    "description": " BuildSpec for an Amplify App ",
+                    "maxLength": 25000,
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "customRules": {
+                    "description": " Custom rewrite / redirect rules for an Amplify App. ",
+                    "items": {
+                        "description": " Custom rewrite / redirect rule. ",
+                        "properties": {
+                            "condition": {
+                                "description": " The condition for a URL rewrite or redirect rule, e.g. country code. ",
+                                "maxLength": 2048,
+                                "minLength": 1,
+                                "type": "string"
+                            },
+                            "source": {
+                                "description": " The source pattern for a URL rewrite or redirect rule. ",
+                                "maxLength": 2048,
+                                "minLength": 1,
+                                "type": "string"
+                            },
+                            "status": {
+                                "description": " The status code for a URL rewrite or redirect rule. ",
+                                "maxLength": 3,
+                                "minLength": 3,
+                                "type": "string"
+                            },
+                            "target": {
+                                "description": " The target pattern for a URL rewrite or redirect rule. ",
+                                "maxLength": 2048,
+                                "minLength": 1,
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "source",
+                            "target"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "description": {
+                    "description": " Description for an Amplify App ",
+                    "maxLength": 1000,
+                    "type": "string"
+                },
+                "enableBasicAuth": {
+                    "description": " Enable Basic Authorization for an Amplify App, this will apply to all branches part of this App. ",
+                    "type": "boolean"
+                },
+                "enableBranchAutoBuild": {
+                    "description": " Enable the auto building of branches for an Amplify App. ",
+                    "type": "boolean"
+                },
+                "environmentVariables": {
+                    "description": " Environment variables map for an Amplify App. ",
+                    "items": {
+                        "properties": {
+                            "key": {
+                                "maxLength": 255,
+                                "type": "string"
+                            },
+                            "value": {
+                                "maxLength": 1000,
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "iamServiceRoleArn": {
+                    "description": " AWS IAM service role for an Amplify App ",
+                    "maxLength": 1000,
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "name": {
+                    "description": " Name for the Amplify App ",
+                    "maxLength": 255,
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "oauthToken": {
+                    "description": " OAuth token for 3rd party source control system for an Amplify App, used to create webhook and read-only deploy key. OAuth token is not stored. ",
+                    "maxLength": 100,
+                    "type": "string"
+                },
+                "platform": {
+                    "description": " Platform / framework for an Amplify App ",
+                    "enum": [
+                        "IOS",
+                        "ANDROID",
+                        "WEB",
+                        "REACT_NATIVE"
+                    ],
+                    "type": "string"
+                },
+                "repository": {
+                    "description": " Repository for an Amplify App ",
+                    "maxLength": 1000,
+                    "type": "string"
+                },
+                "tags": {
+                    "description": " Tag for an Amplify App ",
+                    "items": {
+                        "properties": {
+                            "key": {
+                                "maxLength": 1000,
+                                "type": "string"
+                            },
+                            "value": {
+                                "maxLength": 1000,
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "name",
+                "repository",
+                "platform",
+                "oauthToken"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
